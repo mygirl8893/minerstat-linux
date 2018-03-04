@@ -65,6 +65,8 @@ COMMAND LINE OPTIONS:
 	For solo mining, specify "http://" before address, note that this mode is not intended for proxy or HTTP pools, also "-allpools 1" will be set automatically in this mode.
 	Note: The miner supports all Stratum versions for Ethereum, HTTP mode is necessary for solo mining only. 
 	Using any proxies will reduce effective hashrate by at least 1%, so connect miner to Stratum pools directly. Using HTTP pools will reduce effective hashrate by at least 5%.
+	Miner also supports SSL/TLS encryption for all data between miner and pool (if pool supports encryption over stratum), it significantly improves security.
+	To enable encryption, use "ssl://" or "stratum+ssl://" prefix (or "tls" instead of "ssl"), for example: "-epool ssl://eu1.ethermine.org:5555"
 
 -ewal 	Your Ethereum wallet address. Also worker name and other options if pool supports it. 
 	Pools that require "Login.Worker" instead of wallet address are not supported directly currently, but you can use "-allpools 1" option to mine there.
@@ -254,6 +256,8 @@ COMMAND LINE OPTIONS:
 	Default value is "0".
 
 -platform	selects GPUs manufacturer. 1 - use AMD GPUs only. 2 - use NVIDIA GPUs only. 3 - use both AMD and NVIDIA GPUs. Default value is "3".
+
+-checkcert	only for SSL connection: verify pool certificate. Default value is "1" (verify), use "-checkcert 0" to skip certificate verification.
 
 
 
@@ -511,6 +515,9 @@ This miner does not use HTTP protocol, it uses Stratum directly. So you should c
 
 - Miner crashed and I cannot restart it until reboot.
   Often when OpenCL fails, you have to reboot the system, not just restart miner. Sometimes even soft reboot won't work and you have to press Reset button. It is because the fail is at drivers level, Windows does not like such things and drivers too.
+
+- EthMan loses rigs with 12 GPUs.
+  Sometimes systems with 12 GPUs and low-end CPU become slow for remote access, you can see problems with EthMan and other remote management software.
 
 
 FAQ #2:
