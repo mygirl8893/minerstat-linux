@@ -202,6 +202,7 @@ if(global.client === "ccminer-tpruvot") { global.db = "cc"; }
 if(global.client === "ccminer-djm34") { global.db = "ccdj"; }
 if(global.client === "ccminer-krnlx") { global.db = "krnlx"; }
 if(global.client === "ccminer-alexis") { global.db = "ccalex"; }
+if(global.client === "ccminer-x16r") { global.db = "ccenemy"; }
 if(global.client === "claymore-xmr") { global.db = "xmr"; }
 if(global.client === "claymore-zec") { global.db = "zec"; } 
 if(global.client === "ewbf-zec") { global.db = "ezec"; } 
