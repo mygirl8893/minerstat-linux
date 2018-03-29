@@ -44,6 +44,7 @@ echo ""
 cd /home/minerstat/minerstat-linux
 sudo sh git.sh
 echo ""
+sudo chmod -R 777 /home/minerstat/minerstat-linux/*
 
 echo "-------- OVERCLOCKING ---------------------------"
 cd /home/minerstat/minerstat-linux/bin
