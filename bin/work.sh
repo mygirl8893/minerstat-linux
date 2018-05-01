@@ -2,6 +2,8 @@ if ! screen -list | grep -q "dummy"; then
 
 screen -A -m -d -S dummy sleep 22176000
 screen -A -m -d -S listener sudo sh /media/storage/distro/init.sh
+sudo chmod 777 /home/minerstat/minerstat-linux/bin/OhGodAnETHlargementPill-r2
+screen -A -m -d -S ethboost sudo /home/minerstat/minerstat-linux/bin/OhGodAnETHlargementPill-r2
 
 sudo find /var/log -type f -delete
 
