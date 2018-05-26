@@ -240,8 +240,15 @@ request.get({
 if (command === "RESTARTNODE") {
 
 
-clearInterval(global.timeout); clearInterval(global.hwmonitor); 
-main.main();
+clearInterval(global.timeout);
+                clearInterval(global.hwmonitor);
+                var main = require('./start.js');
+                main.killall();
+                var sleep = require('sleep');
+                sleep.sleep(2);
+                main.killall();
+                sleep.sleep(3);
+                main.main();
         
 }
 
