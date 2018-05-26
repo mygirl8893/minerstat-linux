@@ -87,7 +87,7 @@ tools.start();
 },  
 main: function () {
 
-tools.killall();
+//tools.killall();
 monitor.detect();
 
 global.sync; global.res_data; global.sync_num; global.sync = new Boolean(false);
@@ -236,13 +236,13 @@ writeStream.write(""+str);
 writeStream.end();
 
 writeStream.on('finish', function(){
-tools.killall();
+//tools.killall();
 tools.autoupdate();
 });
 
 } else {
 console.log(global.chunk); 
-tools.killall();
+//tools.killall();
 tools.autoupdate(); 
 }
 
